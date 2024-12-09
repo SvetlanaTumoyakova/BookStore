@@ -3,10 +3,46 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Bookstore"
+        xmlns:local="clr-namespace:Bookstore" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Книжный магазин" Height="450" Width="800"
+        Background="PeachPuff">
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Grid.Row="0" Grid.Column="0" Margin="15"/>
+
+        <Menu Grid.Row="0" Grid.Column="1" Background="PeachPuff">
+            <MenuItem Header="регистрация" Margin="10, 20, 5, 20" FontSize="16" Foreground="Red" FontFamily="Lucida Fax"/>
+            <MenuItem Header="вход" Margin="5, 20" FontSize="16" Foreground="Blue" FontFamily="Lucida Fax"/>
+
+            <MenuItem Width="48" Margin="15">
+                <MenuItem.Icon>
+                    <Image Source= "C:\Users\User\source\repos\Bookstore.GUI_client\free-icon-shopping-cart-711897.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+
+        </Menu>
+
+        <ListView Grid.Row="1" Grid.ColumnSpan="2" Margin="10"
+                   ItemsSource="{Binding Products}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Автор" DisplayMemberBinding="{Binding Autor}" Width="auto"/>
+                    <GridViewColumn Header="Название книги" DisplayMemberBinding="{Binding BookTitle}" Width="auto"/>
+                    <GridViewColumn Header="Издательство" DisplayMemberBinding="{Binding publisherHouse.PublisherHouseTitle }" Width="auto"/>
+                    <GridViewColumn Header="Год издания" DisplayMemberBinding="{Binding PublisherDate}" Width="auto"/>
+                    <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding Price}" Width="auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
