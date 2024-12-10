@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Bookstore.View;
 using Bookstore.ViewModels;
 
 namespace Bookstore

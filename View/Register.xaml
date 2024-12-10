@@ -1,0 +1,53 @@
+﻿<Window x:Class="Bookstore.View.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bookstore.View"
+        mc:Ignorable="d"
+        Title="Регистрация" Name="Register_window" Height="400" Width="470"
+        WindowStartupLocation="CenterScreen"
+        Background="PeachPuff">
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Name="LabelRegister" Content="Логин" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Name="TextBoxRegister" Text="{Binding UserName}" Grid.Column="1" Margin="20, 10"/>
+        <Label Name="LabelRegisterPassword" Content="Пароль" Grid.Row="1" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <PasswordBox Name="TextBoxRegisterPassword" PasswordChanged="PasswordChangedHandler" Grid.Row="1" Grid.Column="1" Margin="20, 10"/>
+        <Label Name="LabelRegisterPassword_Copy" Content="Повторите Пароль" Grid.Row="2" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <PasswordBox Name="TextBoxRegisterPassword_Copy" PasswordChanged="RepeatPasswordChangedHandler" Grid.Row="2" Grid.Column="2" Margin="20, 10"/>
+        
+        <Label Name="LabelRegisterLastName" Content="Фамилия" Grid.Row="3" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Name="TextBoxLastName" Text="{Binding Person.LastName}" Grid.Row="3" Grid.Column="1" Margin="20, 10"/>
+        <Label Name="LabelRegisterFirstName" Content="Имя" Grid.Row="4" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Name="TextBoxFirstName" Text="{Binding Person.FirstName}" Grid.Row="4" Grid.Column="1" Margin="20, 10"/>
+        <Label Name="LabelRegisterPatronymic" Content="Отчество" Grid.Row="5" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Name="TextBoxPatronymic" Text="{Binding Person.Patronymic}" Grid.Row="5" Grid.Column="1" Margin="20, 10"/>
+        <Label Name="LabelRegisterAddress" Content="Адрес" Grid.Row="6" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Name="TextBoxAddress" Text="{Binding Person.Address}" Grid.Row="6" Grid.Column="1" Margin="20, 10"/>
+        <Label Name="LabelRegisterPhone" Content="Телефон" Grid.Row="7" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox Name="TextBoxPhone" Text="{Binding Person.Phone}" Grid.Row="7" Grid.Column="1" Margin="20, 10"/>
+
+        <StackPanel Grid.Row="8" Grid.ColumnSpan="2" Margin="5, 0" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button IsDefault="True" Name="btnRegister" Content="Зарегистрироваться" Click="btnRegister_Click"  Height="25" Width="120" Margin="10, 0"/>
+            <Button IsCancel="True" Content="Отменить" Height="25" Width="120" Margin="10, 0"/>
+        </StackPanel>
+    </Grid>
+</Window>

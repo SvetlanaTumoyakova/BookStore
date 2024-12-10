@@ -16,7 +16,7 @@ namespace Bookstore.Models
         public Guid Id { get; set; }
         //[Column("id")]
         public required string BookTitle { get; set; }
-        public required string Autor { get; set; }
+        public required string Author { get; set; }
         public required string PublisherDate { get; set; }
         public required int CountPages { get; set; }
         public required int Price { get; set; }

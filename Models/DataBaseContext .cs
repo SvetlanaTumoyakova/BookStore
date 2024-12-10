@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bookstore.Models.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bookstore.Models
@@ -13,6 +14,7 @@ namespace Bookstore.Models
         
         public DbSet<Product> Products { get; set; }
         public DbSet<PublisherHouse> PublisherHouses { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public DataBaseContext(string connectionString)
         {
